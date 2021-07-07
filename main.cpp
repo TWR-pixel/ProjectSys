@@ -17,25 +17,26 @@ int main()
     setLength(&memory);//Header.h Инициализирует переменную memory
 
     
+
+    
     GlobalMemoryStatusEx(&memory);
     GetSystemTime(&t);
     GetSystemInfo(&sysI);
 
     
-    cout << "Year: "; cout << t.wYear << endl << endl;;
+    cout << "Year: "; cout << t.wYear << endl << endl;
     
-    enum arch { x86INTEL, IntelItaniumBased = 6, ARM64 = 12, ARM = 5, x64AMD_or_Intel = 9,UNKNOWN = 0xffff};//АРХИТЕКТУРЫ ПРОЦЕССОРОВ
 
-    
     switch (sysI.wProcessorArchitecture)
     {
-    case x86INTEL: cout << "Архитектура: x86 INTEL." << '\n'; break;
-    case IntelItaniumBased: cout << "Архитектура: Intel Itanium-based." << '\n'; break;
-    case ARM64: cout << "Архитектура: ARM64." << '\n'; break;
-    case ARM: cout << "Архитектура: ARM." << '\n'; break;
-    case x64AMD_or_Intel: cout << "Архитектура: x64 (AMD or Intel). " << '\n'; break;
-    case UNKNOWN:cout << "Архитектура: Unknown architecture. " << '\n'; break;
+    case PROCESSOR_ARCHITECTURE_INTEL: cout << "Архитектура: x86." << '\n'; break;
+    case PROCESSOR_ARCHITECTURE_IA64: cout << "Архитектура: Intel Itanium-based ." << '\n'; break;
+    case PROCESSOR_ARCHITECTURE_ARM64: cout << "Архитектура: ARM64." << '\n'; break;
+    case PROCESSOR_ARCHITECTURE_ARM: cout << "Архитектура: ARM." << '\n'; break;
+    case PROCESSOR_ARCHITECTURE_AMD64: cout << "Архитектура: x64 (AMD or Intel). " << '\n'; break;
+    case PROCESSOR_ARCHITECTURE_UNKNOWN:cout << "Архитектура: Unknown architecture. " << '\n'; break;
     }
+   
     cout << "-----------------------" << '\n';
     cout <<"Страничная память: " << sysI.dwPageSize << '\n';
     cout << "-----------------------" << '\n';
