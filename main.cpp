@@ -12,12 +12,8 @@ int main()
     SYSTEMTIME t;
     SYSTEM_INFO sysI;
     MEMORYSTATUSEX memory;
-    
-    
+   
     setLength(&memory);//Header.h Инициализирует переменную memory
-
-    
-
     
     GlobalMemoryStatusEx(&memory);
     GetSystemTime(&t);
@@ -25,8 +21,7 @@ int main()
 
     
     cout << "Year: "; cout << t.wYear << endl << endl;
-    
-
+   
     switch (sysI.wProcessorArchitecture)
     {
     case PROCESSOR_ARCHITECTURE_INTEL: cout << "Архитектура: x86." << '\n'; break;
